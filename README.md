@@ -45,8 +45,6 @@ You can now use your cluster with:
 kubectl cluster-info --context kind-kind
 
 Have a question, bug, or feature request? Let us know! https://kind.sigs.k8s.io/#community 🙂
-
- >>
 ```
 
 ### Pod
@@ -339,3 +337,8 @@ deploy-sample-7b7fc7c5d-2fkn2   1/1     Running     0          19m
 Sun Jan 10 20:04:02 UTC 2021
 ```
 
+### おかたづけ
+
+```sh
+>> kind delete cluster
+```
