@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: deploy-sample
+  name: deploy-sample
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: deploy-match-label
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: deploy-match-label
+    spec:
+      containers:
+      - image: hetare2dmm/sample_app
+        name: sample-app-7j49k
+        resources: {}
+        env:
+          - name: POD_IP
+            valueFrom:
+              fieldRef:
+                fieldPath: status.podIP
+status: {}

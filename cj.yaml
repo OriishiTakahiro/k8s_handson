@@ -1,0 +1,24 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  creationTimestamp: null
+  name: cj-sample
+spec:
+  jobTemplate:
+    metadata:
+      creationTimestamp: null
+      name: cj-sample
+    spec:
+      template:
+        metadata:
+          creationTimestamp: null
+        spec:
+          containers:
+          - image: centos:8
+            name: cj-sample
+            resources: {}
+            command: ['sh']
+            args: ['-c', 'curl -X PUT http://svc-sample.default.svc.cluster.local:8900/date -d "date=$(date)"']
+          restartPolicy: Never
+  schedule: '* * * * *'
+status: {}
