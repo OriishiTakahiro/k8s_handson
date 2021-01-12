@@ -18,7 +18,7 @@ spec:
         app: deploy-match-label
     spec:
       containers:
-      - image: nginx
+      - image: nginx:1.19
         name: sample-app-7j49k
         resources: {}
 status: {}
